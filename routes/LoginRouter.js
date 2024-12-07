@@ -21,10 +21,12 @@ module.exports = router;
 
 const express = require('express');
 const router = express.Router();
-const itemController = require('../controllers/LoginController');
+const itemController = require('../controllers/LoginController'); // Import the correct controller
+
 console.log("in the router");
+
 // Define routes for users
-router.post('/item', LoginController.CreateItem);
-router.get('/item', LoginController.GetItems);
+router.post('/login', itemController.CreateItem); // Use itemController
+router.get('/login', itemController.GetItems);   // Use itemController
 
 module.exports = router;

@@ -1,4 +1,5 @@
-import { Schema, model } from 'mongoose';
+const { Schema, model } = require('mongoose');
+
 // Define the schema for a User
 const ItemsSchema = new Schema({
     email: {
@@ -11,4 +12,6 @@ const ItemsSchema = new Schema({
         required: true,
     },
 }, { timestamps: true });
-export default model('login', ItemsSchema);
+
+// Export the model using CommonJS syntax
+module.exports = model('login', ItemsSchema);
